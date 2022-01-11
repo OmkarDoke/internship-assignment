@@ -15,6 +15,9 @@ def ToWord(N):
 
 
 num=int(input("Enter number:"))
+if num==0:
+    print("Zero")
+    exit (0)
 Base=['','Thousand','Million','Billion','Trillion','Quadrillion','Quintillion','Sextillion','Septillion',
 'Octillion','Nonillion','Decillion','Undecillion','Duodecillion','Tredecillion','Quatttuor-decillion',
 'Quindecillion','Sexdecillion','Septen-decillion','Octodecillion','Novemdecillion','Vigintillion']
@@ -26,9 +29,19 @@ if num<0:
     num*=-1
 # print(ToWord(num))
 while  num:
-    Res=ToWord(num%1000)+" "+Base[ind]+" "+Res
-    num//=1000
+    tmp=num%1000
+    if tmp!=0:
+        Res=ToWord(tmp)+" "+Base[ind]+" "+Res 
+        num//=1000
     ind+=1
 if minusflag==1:
     Res="Minus "+Res
-print(Res)    
+print(Res)
+    
+
+
+
+        
+
+
+    
