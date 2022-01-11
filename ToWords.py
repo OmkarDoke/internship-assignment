@@ -20,10 +20,15 @@ Base=['','Thousand','Million','Billion','Trillion','Quadrillion','Quintillion','
 'Quindecillion','Sexdecillion','Septen-decillion','Octodecillion','Novemdecillion','Vigintillion']
 ind=0
 Res=''
+minusflag=0
+if num<0:
+    minusflag=1
+    num*=-1
 # print(ToWord(num))
 while  num:
     Res=ToWord(num%1000)+" "+Base[ind]+" "+Res
     num//=1000
     ind+=1
-
+if minusflag==1:
+    Res="Minus "+Res
 print(Res)    
