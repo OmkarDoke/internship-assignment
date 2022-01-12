@@ -24,20 +24,7 @@ int GetIndex(char ch)
         return ch - 65;
 }
 
-int SearchBookbyId(int id)
-{
-    for (int i = 0; i < 26; i++)
-    {
-        Book *curr = BookList[i].next;
-        while (curr)
-        {
-            if (curr->Book_id == id)
-                return 1;
-            curr=curr->next;    
-        }
-    }
-    return 0;
-}
+
 
 int SearchBookbyName(char *name)
 {
@@ -68,12 +55,6 @@ void InsertBook(int id, char *name)
     if (SearchBookbyName(name))
     {
         printf("Book name alredy present");
-    }
-    else 
-    if (SearchBookbyId(id)==1)
-    {
-        printf("Book id alredy present");
-        return;
     }
     else
     {
