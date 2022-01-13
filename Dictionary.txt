@@ -1,2 +1,1 @@
-abhishek aas waghmare arerao kadam chinmay shinde sanket mahesh krishna sanfrinsisco
-test test1 test2 ssssss
+abhishek aas waghmare arerao kadam chinmay shinde sanket mahesh krishna all other types are called seful when we want to process values of different types differently or just want to do a quick check
