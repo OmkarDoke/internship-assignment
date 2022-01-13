@@ -14,7 +14,7 @@ int main()
 {
     char String[1000];
     printf("Enter the String:");
-    scanf("%s", String);
+    scanf("%s",String);
     if (CheckPalindrome(String))
         printf("String \'%s\' is palindrome", String);
     else
