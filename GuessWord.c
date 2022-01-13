@@ -7,13 +7,7 @@ typedef struct TreeNode
     char word[100];
     struct TreeNode *left, *right;
 } Tree;
-// typedef struct UnknownWord
-// {
-//     int hints;
-//     char start;
-//     int indexarry[100];
-//     char valuearray[100];
-// }UnknownWord;
+
 int Foundflag;
 Tree *Insert(Tree *root, char *word)// Insert word in Tree
 {
@@ -66,17 +60,6 @@ Tree *FindSubtree(Tree *root, char name)  //This function finds subtree which
     }
     return root;
 }
-// void FindWords(Tree *root, char start, int length) //This function finds the words in given tree 
-// {
-//     if (root != NULL)
-//     {
-//         if (strlen(root->word) == length && start == root->word[0])
-//                 printf("\nWord matches with '%s'", root->word);
-       
-//         FindWords(root->right, start, length);
-//         FindWords(root->left, start, length);
-//     }
-// }
 
 void FindWords(Tree *root, char *word) //This function find the words in given tree 
 {
