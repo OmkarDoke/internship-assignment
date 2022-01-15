@@ -34,17 +34,19 @@ int SearchBookbyName(char *name)
     if (BookList[index].next == NULL)
         return 0;
     else
-    {
+    {   
+        int index = 1;
         Book *curr = BookList[index].next;
         while (curr != NULL)
         {
             if (strcmp(name, curr->name) == 0)
                 break;
             curr = curr->next;
+            index++;
         }
         if (curr == NULL)
             return 0;
-        return 1;
+        return index;
     }
 }
 
@@ -121,6 +123,20 @@ int DeleteBook()
         prev->next=curr->next;
         free(curr);
         return 1;
+
+
+
+         // if (curr == BookList[index].next)
+        // {
+        //     if (curr->next == NULL)
+        //         BookList[index].next = NULL;
+        //     else
+        //         BookList[index].next = curr->next;
+        // }
+        // else if (curr->next == NULL)
+        //     prev->next = NULL;
+        // else
+        //     prev->next = curr->next;
     }
 }
 
@@ -155,7 +171,8 @@ int main()
         case 4:
             printf("Enter Book name:");
             scanf("%s", name);
-            if (SearchBookbyName(name))
+            int Result=SearchBookbyName(name);
+            if (Result!=0)
                 printf("Book found");
             else
                 printf("Book not found");
