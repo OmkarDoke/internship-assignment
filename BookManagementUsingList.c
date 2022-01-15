@@ -8,6 +8,36 @@ typedef struct Book
     char *Book_name;
     struct Book *next;
 } Book;
+int SearchbyId(Book *Head,int id)
+{
+    Book *curr = Head->next;
+    int position = 1;
+   
+    while (curr)
+    {
+        if (curr->Book_id == id)
+            return position;
+        position++;
+        curr = curr->next;
+    }
+    return 0;
+}
+
+int SearchbyName(Book *Head,char *name)
+{
+    Book *curr = Head->next;
+    int position = 1, id;
+    // char name[100];
+
+    while (curr)
+    {
+        if (strcmp(curr->Book_name,name) == 0)
+            return position;
+        position++;
+        curr = curr->next;
+    }
+    return 0;
+}
 int InsertBook(Book *Head, int position)
 {
     Book *curr = Head->next;
@@ -16,6 +46,16 @@ int InsertBook(Book *Head, int position)
     char name[100];
     printf("Enter Book name and Book id:");
     scanf("%s %d", name, &no);
+    if(SearchbyId(Head,no)==1)
+    {
+        printf("Book id alredy present");
+        return 0;
+    }
+    if(SearchbyName(Head,name)==1)
+    {
+        printf("Book name alredy present");
+        return 0;
+    }
     Book *new = (Book *)malloc(sizeof(Book));
     new->Book_id = no;
     new->next = NULL;
@@ -66,44 +106,14 @@ void DeleteBook(Book *Head, int position)
     printf("Record is deleted");
     Head->Book_id--;
 }
-int SearchbyId(Book *Head)
-{
-    Book *curr = Head->next;
-    int position = 1, id;
-    printf("Enter Book id:");
-    scanf("%d", &id);
-    while (curr)
-    {
-        if (curr->Book_id == id)
-            return position;
-        position++;
-        curr = curr->next;
-    }
-    return 0;
-}
 
-int SearchbyName(Book *Head)
-{
-    Book *curr = Head->next;
-    int position = 1, id;
-    char name[100];
-    printf("Enter Book name:");
-    scanf("%s",name);
-    while (curr)
-    {
-        if (strcmp(curr->Book_name,name) == 0)
-            return position;
-        position++;
-        curr = curr->next;
-    }
-    return 0;
-}
 int main()
 {
     Book *Head = (Book *)malloc(sizeof(Book));
     Head->Book_id = 0; // To store the count of books in the list
     Head->next = NULL;
-    int choice, option, position, result;
+    int choice, option, position, result,id;
+    char name[1000];
     do
     {
         printf("\n1]Insert\n2]Delete\n3]Display\n4]Search\n5]Exit\n->");
@@ -137,9 +147,20 @@ int main()
             scanf("%d", &option);
             result = -1;
             if (option == 1)
-                result = SearchbyId(Head);
+            {
+                 printf("Enter Book id:");
+                scanf("%d", &id);
+                result = SearchbyId(Head,id);
+
+            }
             else if (option == 2)
-                result = SearchbyName(Head);
+            {
+                    printf("Enter Book name:");
+                    scanf("%s",name);
+                    result = SearchbyName(Head,name);
+
+
+            }
             if (result == -1)
                 printf("Invalid choice");
             else if (result == 0)
