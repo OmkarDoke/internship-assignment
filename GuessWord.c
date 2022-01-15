@@ -76,17 +76,6 @@ Tree *FindSubtree(Tree *root, char name) //This function finds subtree which
     }
     return root;
 }
-// void FindWords(Tree *root, char start, int length) //This function finds the words in given tree
-// {
-//     if (root != NULL)
-//     {
-//         if (strlen(root->word) == length && start == root->word[0])
-//                 printf("\nWord matches with '%s'", root->word);
-
-//         FindWords(root->right, start, length);
-//         FindWords(root->left, start, length);
-//     }
-// }
 
 void FindWords(Tree *root, char *word) //This function find the words in given tree
 {
@@ -137,8 +126,8 @@ int main()
         Tree *Subtree = FindSubtree(Root, unknown[0]);
         if (Subtree != NULL)
         {
-            printf("Subtree \n");
-            Display(Subtree);
+           // printf("Subtree \n");
+           // Display(Subtree);
                Foundflag=0;
                 FindWords(Subtree, unknown);
                 if(Foundflag==0)
