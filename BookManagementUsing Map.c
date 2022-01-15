@@ -86,9 +86,10 @@ void DisplayBook()
         Book *curr = BookList[i].next;
         while (curr)
         {
-            printf("(%d: %s)", curr->Book_id, curr->name);
+            printf("(%s: %d)", curr->name, curr->Book_id);
             curr = curr->next;
         }
+        //printf("\n");
     }
 }
 
@@ -103,9 +104,9 @@ int DeleteBook()
 
     else
     {
-        Book *prev = NULL, *curr;
+        Book *prev , *curr;
         curr = BookList[index].next;
-        //prev = BookList[index];
+        prev = &(BookList[index]);
         while (curr != NULL)
         {
             if (strcmp(name, curr->name) == 0)
@@ -116,17 +117,8 @@ int DeleteBook()
 
         if (curr == NULL)
             return 0;
-        if (curr == BookList[index].next)
-        {
-            if (curr->next == NULL)
-                BookList[index].next = NULL;
-            else
-                BookList[index].next = curr->next;
-        }
-        else if (curr->next == NULL)
-            prev->next = NULL;
-        else
-            prev->next = curr->next;
+       
+        prev->next=curr->next;
         free(curr);
         return 1;
     }
