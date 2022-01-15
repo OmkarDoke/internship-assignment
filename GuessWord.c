@@ -7,13 +7,6 @@ typedef struct TreeNode
     char word[100];
     struct TreeNode *left, *right;
 } Tree;
-// typedef struct UnknownWord
-// {
-//     int hints;
-//     char start;
-//     int indexarry[100];
-//     char valuearray[100];
-// }UnknownWord;
 int Foundflag;
 int Charcmp(char c1, char c2)
 {
@@ -126,8 +119,6 @@ int main()
         Tree *Subtree = FindSubtree(Root, unknown[0]);
         if (Subtree != NULL)
         {
-           // printf("Subtree \n");
-           // Display(Subtree);
                Foundflag=0;
                 FindWords(Subtree, unknown);
                 if(Foundflag==0)
