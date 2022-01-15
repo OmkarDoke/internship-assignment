@@ -123,20 +123,6 @@ int DeleteBook()
         prev->next=curr->next;
         free(curr);
         return 1;
-
-
-
-         // if (curr == BookList[index].next)
-        // {
-        //     if (curr->next == NULL)
-        //         BookList[index].next = NULL;
-        //     else
-        //         BookList[index].next = curr->next;
-        // }
-        // else if (curr->next == NULL)
-        //     prev->next = NULL;
-        // else
-        //     prev->next = curr->next;
     }
 }
 
