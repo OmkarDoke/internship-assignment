@@ -1,11 +1,7 @@
 #include<stdio.h>
-int main()
+void CountDigit(int countarray[])
 {
     long int number;
-    int countarray[10];
-    for(int i=0;i<10;i++)
-    countarray[i]=0;
-
     printf("Enter a number:");
     scanf("%ld",&number);
     if(number<0)
@@ -15,6 +11,14 @@ int main()
         countarray[(number%10)]++;
         number/=10;
     }
+}
+int main()
+{
+    int countarray[10];
+    for(int i=0;i<10;i++)
+    countarray[i]=0;
+
+    CountDigit(countarray);
     printf("Digit   Frequency\n");
     for(int i=0;i<10;i++)
     {
