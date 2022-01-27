@@ -149,9 +149,6 @@ SELECT * FROM CUSTOMER WHERE Age>50 OR Cust_city="Pune";
 .print EXAMPLE OF LIKE --SHOWS CUSTOMER DETAILS OF HAVING 2ND CHARACTER IS 'A'
 SELECT * FROM CUSTOMER WHERE Customer_name LIKE "_A%";
 
---JOIN EXAMPLES
---select Customer.Customer_id,customer.Customer_name,Branch.Branch_name from Customer Inner Join Branch on Branch.Branch_id=Customer.Branch_id;
--- 
 .print
 .print
 .print EXAMPLE OF JOIN
