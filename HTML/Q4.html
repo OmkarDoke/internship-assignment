@@ -3,72 +3,84 @@
   <head>
     <title>Table Demo</title>
     <style>
-      table,tr {
-        border: 1px solid black;
+      table{
         align-items: center;
+        width: 100%;
+      }
+      th{
+        background-color: rgba(240, 235, 229, 0.842);        
+      }
+      tr{
+        outline: thin solid;
+
       }
       ul {
         list-style-type: none;
       }
-      
+      #Heading
+      {
+        font-size: medium;
+        font-weight: bold;
+        text-align: left;
+      }
     </style>
   </head>
   <body>
-    <table style="width: 100%">
+    <table>
       <tr>
         <th colspan="4">A complex table</th>
       </tr>
       <tr >
-        <td colsoan="2"><strong>Inovice #3242343 </strong></td>
-        <td ><strong>14 January 2025 </strong></td>
+        <th >Inovice #3242343 </th>
+        <th colspan="3">14 January 2025 </th>
       </tr>
       <tr>
         <td>
           <ul>
-            <li><strong>Pay to</strong></li>
-            <li>Acma Billing Co.</li>
+            <li id="Heading">Pay to:</li>
+            <li>Acme Billing Co.</li>
             <li>123 Main St.</li>
-            <li>Pune No 12345</li>
+            <li>Cityville, Na 12345</li>
           </ul>
         </td>
         <td>
           <ul>
-            <li><strong>Customer</strong></li>
+            <li id="Heading">Customer:</li>
             <li>John Smith</li>
-            <li>321 Main St.</li>
-            <li>Pune No 12345</li>
+            <li>321 Willow Way St.</li>
+            <li>Southeast Notrhwestershire, MA 54321</li>
           </ul>
         </td>
       </tr>
-      <tr>
+      <tr id="Heading" >
         <th>Name/Discription</th>
         <th>Qty</th>
         <th>@</th>
         <th>Cost</th>
       </tr>
       <tr>
-        <td>AAA</td>
+        <td>Paperclips</td>
         <td>100.00</td>
         <td>0.01</td>
         <td>10.00</td>
       </tr>
       <tr>
-        <td>BBB</td>
+        <td>Staples(box)</td>
         <td>100.00</td>
         <td>1.00.00</td>
         <td>100.00</td>
       </tr>
       <tr>
-        <td colspan="3">Subtotal</td>
+        <th colspan="3" id="Heading">Subtotal</th>
         <td>110.00</td>
       </tr>
       <tr>
-        <td colspan="2">Tax</td>
+        <th colspan="2" id="Heading">Tax</th>
         <td>8%</td>
         <td>8.80</td>
       </tr>
       <tr>
-        <td colspan="3">Grand Total</td>
+        <th colspan="3" id="Heading">Grand Total</th>
         <td>$118.80</td>
       </tr>
     </table>
