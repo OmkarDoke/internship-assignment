@@ -1,0 +1,43 @@
+.nav-nar{
+    background-color: #333;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+.right{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    text-align: right;
+    margin-right: 5%;
+    } 
+
+  .right li input{
+    border-radius: 5px;
+    margin-top: 6px;
+    padding: 6px 4px;
+    margin-left: 4px;
+} 
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+li a:hover {
+    background-color: #111;
+}
+body{
+    margin: 0px;
+  }
