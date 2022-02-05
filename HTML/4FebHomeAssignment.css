@@ -1,43 +1,255 @@
-.nav-nar{
-    background-color: #333;
+.nav-nar {
+  background-color: #333;
 }
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
 li {
-    float: left;
+  float: left;
 }
-.right{
-    display: flex;
-    justify-content: flex-end;
-    color: white;
-    text-align: right;
-    margin-right: 5%;
-    } 
+.right {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  text-align: right;
+  margin-right: 5%;
+}
 
-  .right li input{
-    border-radius: 5px;
-    margin-top: 6px;
-    padding: 6px 4px;
-    margin-left: 4px;
-} 
+.right li input {
+  border-radius: 3px;
+  margin: 10px 2px;
+  padding: 6px 4px;
+  border: none;
+  height: 20px;
+  width: auto;
+}
+.Login-Btn {
+  border-radius: 3px;
+  margin: 10px 2px;
+  border: none;
+  height: 32px;
+  width: 70px;
+  background-color: white;
+}
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover {
-    background-color: #111;
+  background-color: #111;
 }
-body{
-    margin: 0px;
-  }
+body {
+  margin: 0px;
+}
+.mid {
+  width: 100%;
+  display: flex;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 17px;
+
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 7px;
+}
+tr,
+td {
+  border: solid gainsboro 2px;
+  border-collapse: collapse;
+  padding: 15px;
+}
+
+.left-column {
+  width: 25%;
+  float: left;
+}
+.left-1 {
+  width: auto;
+}
+.left-2 {
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.center-column {
+  height: 100%;
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.right-column {
+  height: 100%;
+  width: 25%;
+  float: right;
+}
+.Base-div {
+  width: 100%;
+  background-color: gainsboro;
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-around;
+}
+.Base-Box {
+  min-width: 300px;
+  max-width: 300px;
+  margin: 70px 0px;
+}
+footer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+.footer-link {
+  color: rgb(105, 105, 236);
+}
+.Base-Heading {
+  height: 40px;
+  font-size: 35px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.Base-Btn {
+  margin: 20px 0px;
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+}
+.Small-Box {
+  height: 80px;
+  width: 110px;
+  border: solid hsl(0, 0%, 100%) 3px;
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.Small-Box-Container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 30px;
+  grid-auto-flow: column;
+}
+
+.Full-1 {
+  border: solid gainsboro 2px;
+  border-radius: 7px;
+  margin: 10px 10px;
+  font-size: 15px;
+  color: green;
+}
+caption {
+  margin-left: 20px;
+  font-size: 20px;
+}
+.Headline {
+  font-size: 25px;
+  background-color: gainsboro;
+}
+
+body {
+  font-size: 17px;
+}
+.Right-1 {
+  text-align: justify 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+/*    border: solid 1px;
+    width: 500px;
+
+*/
+
+caption {
+  height: fit-content;
+}
+.Cancel {
+  color: rgba(245, 194, 194, 0.952);
+  background-color: rgba(236, 122, 122, 0.774);
+  padding-top: 20px;
+  font-size: 20px;
+  height: 50px;
+  border-radius: 5px;
+}
+.Row-head {
+  font-size: 30px;
+}
+.End-data {
+  color: rgb(68, 68, 235);
+}
+.Box-Row {
+  color: red;
+}
+.Blank1 {
+  min-height: 120px;
+  min-width: 120px;
+  max-height: 120px;
+  max-width: 120px;
+  background-color: gainsboro;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.Blank2 {
+  float: right;
+  margin-left: 10px;
+}
+.Row {
+  display: flex;
+  margin: 20px 0px;
+  font-size: 17px;
+  height: 180px;
+  border-bottom: solid gainsboro 2px;
+}
+.Bottom-button {
+  display: flex;
+  height: 40px;
+  margin: 20px;
+  border-radius: 5px;
+}
+.Left-Btn {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: none;
+}
+.Right-Btn {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background: none;
+}
+.Middle-Btn {
+  border-top-width: 0px;
+  background: none;
+}
+.Left-Text-Area {
+  height: 30px;
+  border-radius: 5px;
+  background: none;
+  margin-left: 20px;
+}
+.Left-Search-btn {
+  height: 37px;
+  width: 70px;
+  border-radius: 5px;
+  background: none;
+}
+.Level {
+  font-size: 17px;
+}
