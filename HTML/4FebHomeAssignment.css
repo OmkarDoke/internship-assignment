@@ -67,7 +67,7 @@ tr,
 td {
   border: solid gainsboro 2px;
   border-collapse: collapse;
-  padding: 15px;
+  padding: 10px;
 }
 
 .left-column {
@@ -209,8 +209,9 @@ caption {
 .Cancel {
   color: rgba(245, 194, 194, 0.952);
   background-color: rgba(236, 122, 122, 0.774);
-  padding-top: 20px;
-  font-size: 20px;
+  /* padding-top: 20px; */
+  padding: 10px 7px;
+  font-size: 17px;
   height: 50px;
   border-radius: 5px;
 }
@@ -241,8 +242,8 @@ caption {
 .Row {
   display: flex;
   margin: 20px 0px;
-  font-size: 17px;
-  height: 180px;
+  font-size: 15px;
+  height: 230px;
   border-bottom: solid gainsboro 2px;
 }
 .Bottom-button {
