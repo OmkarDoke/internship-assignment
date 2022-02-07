@@ -1,5 +1,8 @@
 .nav-nar {
   background-color: #333;
+  /* position: fixed;
+  top:0px;
+  left:0px; */
 }
 ul {
   list-style-type: none;
@@ -131,7 +134,6 @@ footer {
 }
 .Base-Btn {
   margin: 20px 0px;
-  width: 90px;
   height: 30px;
   border: none;
   border-radius: 3px;
@@ -163,6 +165,7 @@ footer {
 .Level-1 {
   background-color: green;
   text-align: center;
+
 }
 .Level-2 {
   background-color: blue;
@@ -177,14 +180,15 @@ footer {
 .Level-4 {
   background-color: Red;
   text-align: center;
-  width: 35%;
+  width: 30%;
+
 }
 caption {
   margin-left: 20px;
   font-size: 20px;
 }
 .Headline {
-  font-size: 25px;
+  font-size: 20px;
   background-color: gainsboro;
 }
 

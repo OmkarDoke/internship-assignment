@@ -1,0 +1,25 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  padding: 10px;
+  /* grid-column-gap: 10px;
+    grid-row-gap: 10px; */
+  gap: 30px;
+}
+
+.grid-item {
+  background-color: gainsboro;
+  /* border: 1px solid rgba(250, 246, 246, 0.842); */
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+.inner-item {
+  background-color: rgb(128, 128, 128);
+  border: solid #fff 2px;
+}
