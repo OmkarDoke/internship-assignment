@@ -40,9 +40,24 @@ function printLoneOnces(input) {
 function getFinalProduct(...args) {
     let sum = 0;
     for (let arg of args)
-        sum += arg
+        sum += arg;
+        console.log("Arg Sum:",sum);
+        if (sum<0)
+        sum*=-1
+    while (sum > 9) {
+        
+        let digitProduct = 1;
+        let temp = sum.toString()
+        for (digit of temp) {
+            digitProduct *= digit;
+            sum = parseInt(digitProduct)
+        }
+        console.log("Digit's product:",sum);
 
-    console.log("Sum:", sum);
+        // sum = digitProduct;
+    }
+
+    console.log("final single digit product:",sum);
 
 }
 
@@ -84,39 +99,38 @@ function convertInto(input) {
 }
 
 //Q1
-input = [3, 7, 3, 2, 1, 5, 1, 2, 2, -2, 2];
-console.log("Input array:", input);
+// input = [3, 7, 3, 2, 1, 5, 1, 2, 2, -2, 2];
+// console.log("Input array:", input);
 
-let Boomerangs = getBoomerangs(input);
-console.log("Boomerangs are:", Boomerangs);
+// let Boomerangs = getBoomerangs(input);
+// console.log("Boomerangs are:", Boomerangs);
 
-//Q2
-input = ["first", "second", "3rd", "fifth", "input5", "omkar99doke"]
-let result = getSubarray(input)
-console.log(result)
+// //Q2
+// input = ["first", "second", "3rd", "fifth", "input5", "omkar99doke"]
+// let result = getSubarray(input)
+// console.log(result)
 
-//Q3
-input = [1, 11, 25, 104, 1001, 123451, 841,100111]
-printLoneOnces(input)
+// //Q3
+// input = [1, 11, 25, 104, 1001, 123451, 841,100111]
+// printLoneOnces(input)
 
 
 //Q4
-getFinalProduct(1, 2, 3)
-getFinalProduct(1, 5, 6, 8, 9)
+getFinalProduct(1, 2,-100, 3)
+getFinalProduct(1, 5, 6, 8,-44, 9,234,12)
 
-//Q5
-input = [1,2,3]
-countDepth(input)
-input = [1,[2,[3,4]]]
-countDepth(input)
-input = [1,[2,[3,4,[5,6,[7,8]]]]]
-countDepth(input)
+// //Q5
+// input = [1,2,3]
+// countDepth(input)
+// input = [1,[2,[3,4]]]
+// countDepth(input)
+// input = [1,[2,[3,4,[5,6,[7,8]]]]]
+// countDepth(input)
 
 
-//Q6
-input=""
-input='(x,y,z) => console.log(x)'
-convertInto(input)
-input = 'function inp(x,y){ console.log(x+y)}'
-convertInto(input)
-    // console.log(input.cont("=>"))
+// //Q6
+// input=""
+// input='(x,y,z) => console.log(x)'
+// convertInto(input)
+// input = 'function inp(x,y){ console.log(x+y)}'
+// convertInto(input)
