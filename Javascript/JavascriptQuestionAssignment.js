@@ -1,23 +1,10 @@
-function getBoomerangs(input) {
-    let result = [];
-    for (let index = 0; index < input.length - 2; index++) {
-        let firstNum = input[index]
-        let secondNum = input[index + 1];
-        let thirdNum = input[index + 2];
-        if (firstNum == thirdNum && firstNum != secondNum)
-            result.push([firstNum, secondNum, thirdNum])
-    }
-    return result;
-}
+
 
 
 function getSubarray(input) {
 
     let result = input.filter(element => {
-        for (x of element)
-            if (x >= 48 || x <= 58) {
-                return element;
-            }
+        return /[0-9]/.test(element)
     });
     return result;
 }
@@ -61,76 +48,80 @@ function getFinalProduct(...args) {
 
 }
 
-function countDepth(inpArray) {
-    let depth = 0;
-    if (typeof(inpArray) == 'object') {
-        depth++;
-        subarray = inpArray;
+// function countDepth(inpArray) {
+//     let depth = 0;
+//     if (typeof(inpArray) == 'object') {
+//         depth++;
+//         subarray = inpArray;
 
-        for (let i = 0; i < subarray.length; i++)
-            if (typeof(subarray[i]) == 'object') {
-                depth++;
-                subarray = subarray[i];
-                i = 0;
-            }
+//         for (let i = 0; i < subarray.length; i++)
+//             if (typeof(subarray[i]) == 'object') {
+//                 depth++;
+//                 subarray = subarray[i];
+//                 i = 0;
+//             }
 
-    }
-    console.log("Depth=", depth)
+//     }
+//     console.log("Depth=", depth)
+// }
+function countDepth(inpArray,count) {
+    // let depth = 0;
+   inpArray.forEach(element =>
+    {
+        if(typeof(element)=='object')
+         count= countDepth(element,count=count+1)
+    });
+    
+    return count;
 }
 
 function convertInto(input) {
     let result = "";
     if (input.includes("=>")) {
-        let [parameters, body] = input.split("=>")
-        result = "function Output " + parameters
-        if (body[1] == "{")
-            result = result + "\n " + body
-        else
-            result += " { \n " + body + "\n}"
+        let [fname , parameters]=input.split("=")
+        fname=fname.split(" ")[1]
+        let body=input.split("=>")[1]
+        result += `function ${fname}${parameters} { \n ${body} \n}`
     } else {
-        let firstPara = input.indexOf("(")
-        let lastPara = input.indexOf(")")
+        let nameStart=input.indexOf(" ");
+        let firstPara = input.indexOf("(");
+        let lastPara = input.indexOf(")");
+        let functionName=input.slice(nameStart,firstPara);
         let parameters = input.slice(firstPara, lastPara + 1)
         let body = input.slice(lastPara + 1)
-        result = `${parameters} =>\n${body}`
+        result = `let ${functionName}=${parameters} =>\n${body} `
     }
     console.log(result)
 
 }
 
 //Q1
-// input = [3, 7, 3, 2, 1, 5, 1, 2, 2, -2, 2];
-// console.log("Input array:", input);
-
-// let Boomerangs = getBoomerangs(input);
-// console.log("Boomerangs are:", Boomerangs);
 
 // //Q2
 // input = ["first", "second", "3rd", "fifth", "input5", "omkar99doke"]
 // let result = getSubarray(input)
-// console.log(result)
+// console.table(result)
 
 // //Q3
 // input = [1, 11, 25, 104, 1001, 123451, 841,100111]
-// printLoneOnces(input)
+printLoneOnces(input)
 
 
-//Q4
-getFinalProduct(1, 2,-100, 3)
-getFinalProduct(1, 5, 6, 8,-44, 9,234,12)
+// //Q4
+// getFinalProduct(1, 2,-100, 3)
+// getFinalProduct(1, 5, 6, 8,-44, 9,234,12)
 
 // //Q5
 // input = [1,2,3]
 // countDepth(input)
-// input = [1,[2,[3,4]]]
-// countDepth(input)
-// input = [1,[2,[3,4,[5,6,[7,8]]]]]
+// input = [1,[11,12],[1,34],[2,[3,4]]]
+// console.log(countDepth(input,1 ))// input = [1,[2,[3,4,[5,6,[7,8]]]]]
 // countDepth(input)
 
 
 // //Q6
-// input=""
-// input='(x,y,z) => console.log(x)'
-// convertInto(input)
-// input = 'function inp(x,y){ console.log(x+y)}'
-// convertInto(input)
+input=""
+input='let pow=(x,y) => console.log(x**y)'
+convertInto(input)
+input = 'function inp(x,y){ console.log(x+y)}'
+convertInto(input)
