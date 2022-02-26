@@ -13,14 +13,18 @@ function convertInto(input) {
         let functionName=input.slice(nameStart,firstPara);
         let parameters = input.slice(firstPara, lastPara + 1)
         let body = input.slice(lastPara + 1)
-        result = `let${functionName} = ${parameters} =>\n${body} `
+        result = `let ${functionName} = ${parameters} =>${body} `
     }
     console.log(result)
 
 }
 
 input=""
-input='let pow=(x,y) => console.log(x**y)'
+input=`let pow=(x,y) => console.log(x**y)`
 convertInto(input)
-input = 'function inp(x,y){ console.log(x+y)}'
+input = `function inp(x,y)
+{
+    for(let i=x;i<=y;i++) 
+    console.log(x)
+}`
 convertInto(input)

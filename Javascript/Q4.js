@@ -17,7 +17,7 @@ function getFinalProduct(...args) {
         console.log("Digit's product:",sum);
 
     }
-    console.log("final single digit product:",sum);
+    console.log("Final single digit product:",sum);
 
 }
 

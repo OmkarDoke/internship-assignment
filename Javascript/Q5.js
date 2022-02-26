@@ -1,6 +1,6 @@
 function countDepth(inp, count) {
     inp.forEach(element => {
-        if (typeof element == 'object')
+        if (Array.isArray(element))
             count = countDepth(element, count=count+1);
     });
     return count;
