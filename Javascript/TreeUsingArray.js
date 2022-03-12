@@ -1,10 +1,10 @@
 function printAllChild(id) {
-    let res = Tree.filter((element) => element.parent == id);
-    res.forEach(element => {
-        res[res.length] = [...printAllChild(element.id)]
-    });
-    if (res.length != -1)
-        return [...res];
+    let child=Tree.filter((node) => node.parent == id);
+    child.forEach(node=>{
+        child.push(...printAllChild(node.id))
+    })
+    
+    return child;
 }
 
 Tree = [
@@ -30,6 +30,6 @@ Tree.forEach((element) => {
     let result = printAllChild(id)
     if (result.length) {
         console.log(`Child of id=${id} value=${value} parentid=${parent}`);
-        console.log(result);
+        console.table(result);
     }
 });
